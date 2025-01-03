@@ -10,6 +10,7 @@ import {
   CatalogImportPage,
   catalogImportPlugin,
 } from '@backstage/plugin-catalog-import';
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { ScaffolderPage, scaffolderPlugin } from '@backstage/plugin-scaffolder';
 import { orgPlugin } from '@backstage/plugin-org';
 import { SearchPage } from '@backstage/plugin-search';
@@ -57,7 +58,14 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => <SignInPage {...props} auto providers={['guest',
+      {
+        id: 'github-auth-provider',
+        title: 'GitHub',
+        message: 'Sign in using GitHub',
+        apiRef: githubAuthApiRef,
+      }
+    ]} />,
   },
 });
 
