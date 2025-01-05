@@ -47,6 +47,7 @@ backend.add(
 
 // search plugin
 backend.add(import('@backstage/plugin-search-backend'));
+backend.add(import('@backstage-community/plugin-jenkins-backend'));
 
 // search engine
 // See https://backstage.io/docs/features/search/search-engines

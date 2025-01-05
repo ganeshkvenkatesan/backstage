@@ -122,3 +122,8 @@ kubernetes:
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+
+jenkins:
+  baseUrl: 'http://localhost:8080/'
+  username: 'gvenk00'
+  apiKey: '11da8d027d3fdf3da590d035b4235072ab'
